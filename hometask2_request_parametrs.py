@@ -5,7 +5,6 @@
 # Распечатайте полученные записи.
 
 import requests
-import pprint
 
 # Использование API
 url = "https://jsonplaceholder.typicode.com/posts"
@@ -18,4 +17,9 @@ params = {
 # Печать записи
 response = requests.get(url, params=params)
 
-pprint.pprint(response.json())
+if response.status_code == 200:
+    posts = response.json()
+    for post in posts:
+        print(response.json())
+else:
+    print("Error")
