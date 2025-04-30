@@ -6,7 +6,6 @@
 # Распечатайте статус-код и содержимое ответа.
 
 import requests
-import pprint
 
 # Создание словаря с данными для отправки
 data = {
@@ -21,4 +20,4 @@ response = requests.post("https://jsonplaceholder.typicode.com/posts", json=data
 # Печать статус-кода и содержимое ответа
 print(response.status_code)
 
-pprint.pprint(response.json())
+print(f"ответ - {response.json()}")
